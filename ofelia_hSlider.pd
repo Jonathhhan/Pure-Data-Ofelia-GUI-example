@@ -13,13 +13,13 @@ xpos \, ypos \, width \, height \, minVal \, maxVal = args[1] \, args[2]
 \, this) \; ofWindow.addListener("mouseDragged" \, this) \; ofWindow.addListener("mouseReleased"
 \, this) \; end \; \; function M.value(float) \; value = ofNormalize(float
 \, minVal \, maxVal) \; return ofLerp(minVal \, maxVal \, value) \;
-end \; \; function M.bang() \; ofPushMatrix() \; ofPushStyle() \; ofSetRectMode(OF_RECTMODE_CORNER)
-\; ofSetColor(0) \; ofDrawRectangle(xpos \, ypos \, width \, height)
-\; ofSetColor(255) \; ofDrawRectangle(xpos + height / 10 \, ypos +
-height / 10 \, width - height / 5 \, height - height / 5) \; ofSetColor(100
-\, 200 \, 255) \; ofDrawRectangle(xpos + height / 10 \, ypos + height
-/ 10 \, value * (width - height / 5) \, height - height / 5) \; ofPopMatrix()
-\; ofPopStyle() \; end \; \; function M.mousePressed(e) \; if ofGetMouseX()
+end \; \; function M.bang() \; ofPushMatrix() \; ofPushStyle() \; ofSetColor(0)
+\; ofDrawRectangle(xpos \, ypos \, width \, height) \; ofSetColor(255)
+\; ofDrawRectangle(xpos + height / 10 \, ypos + height / 10 \, width
+- height / 5 \, height - height / 5) \; ofSetColor(100 \, 200 \, 255)
+\; ofDrawRectangle(xpos + height / 10 \, ypos + height / 10 \, value
+* (width - height / 5) \, height - height / 5) \; ofPopMatrix() \;
+ofPopStyle() \; end \; \; function M.mousePressed(e) \; if ofGetMouseX()
 >= xpos + height / 10 and ofGetMouseX() <= xpos + width - height /
 10 and ofGetMouseY() >= ypos + height / 10 and ofGetMouseY() <= ypos
 + height - height / 10 then \; mouseState = 1 \; value = ofNormalize((ofGetMouseX()

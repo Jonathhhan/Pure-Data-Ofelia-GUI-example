@@ -11,19 +11,18 @@ xpos \, ypos \, size = args[1] \, args[2] \, args[3] \; local value
 = 1 \; local clock = ofClock(this \, "delay") \; \; function M.new()
 \; ofWindow.addListener("mousePressed" \, this) \; end \; \; function
 M.value(bang) \; clock:delay(200) \; value = 0 \; return bang \; end
-\; \; function M.bang() \; ofPushMatrix() \; ofPushStyle() \; ofSetRectMode(OF_RECTMODE_CORNER)
-\; ofSetCircleResolution(100) \; ofSetColor(0) \; ofDrawRectangle(xpos
-\, ypos \, size \, size) \; ofSetColor(255) \; ofDrawRectangle(xpos
-+ size / 40 \, ypos + size / 40 \, size - size / 20 \, size - size
-/ 20) \; ofSetColor(0) \; ofDrawCircle(xpos + size / 2 \, ypos + size
-/ 2 \, size / 2.5) \; if value == 1 then \; ofSetColor(255) \; end
-\; ofDrawCircle(xpos + size / 2 \, ypos + size / 2 \, size / 2.7) \;
-ofPopMatrix() \; ofPopStyle() \; end \; \; function M.delay() \; value
-= 1 \; end \; \; function M.mousePressed(e) \; if ofDist(ofGetMouseX()
-\, ofGetMouseY() \, xpos + size / 2 \, ypos + size / 2) <= size / 2.5
-then \; clock:delay(200) \; value = 0 \; return bang \; end \; end
-\; \; function M.free() \; ofWindow.removeListener("mousePressed" \,
-this) \; end \;;
+\; \; function M.bang() \; ofPushMatrix() \; ofPushStyle() \; ofSetCircleResolution(100)
+\; ofSetColor(0) \; ofDrawRectangle(xpos \, ypos \, size \, size) \;
+ofSetColor(255) \; ofDrawRectangle(xpos + size / 40 \, ypos + size
+/ 40 \, size - size / 20 \, size - size / 20) \; ofSetColor(0) \; ofDrawCircle(xpos
++ size / 2 \, ypos + size / 2 \, size / 2.5) \; if value == 1 then
+\; ofSetColor(255) \; end \; ofDrawCircle(xpos + size / 2 \, ypos +
+size / 2 \, size / 2.7) \; ofPopMatrix() \; ofPopStyle() \; end \;
+\; function M.delay() \; value = 1 \; end \; \; function M.mousePressed(e)
+\; if ofDist(ofGetMouseX() \, ofGetMouseY() \, xpos + size / 2 \, ypos
++ size / 2) <= size / 2.5 then \; clock:delay(200) \; value = 0 \;
+return bang \; end \; end \; \; function M.free() \; ofWindow.removeListener("mousePressed"
+\, this) \; end \;;
 #X f 22;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
