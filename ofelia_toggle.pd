@@ -14,7 +14,7 @@ xpos \, ypos \, size = args[1] \, args[2] \, args[3] \; local value
 end \; \; function M.bang() \; ofPushMatrix() \; ofPushStyle() \; ofSetRectMode(OF_RECTMODE_CORNER)
 \; ofFill() \; ofSetColor(0) \; ofDrawRectangle(xpos \, ypos \, size
 \, size) \; ofSetColor(255) \; ofDrawRectangle(xpos + size / 40 \,
-ypos + size / 20 \, size - size / 20 \, size - size / 20) \; ofSetColor(0)
+ypos + size / 40 \, size - size / 20 \, size - size / 20) \; ofSetColor(0)
 \; if value then \; ofDrawLine(xpos \, ypos \, xpos + size \, ypos
 + size) \; ofDrawLine(xpos + size \, ypos \, xpos \, ypos + size) \;
 end \; ofPopMatrix() \; ofPopStyle() \; end \; \; function M.free()
