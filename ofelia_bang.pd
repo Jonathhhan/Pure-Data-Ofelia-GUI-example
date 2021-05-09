@@ -18,7 +18,7 @@ M.value(bang) \; clock:delay(200) \; value = 0 \; return bang \; end
 + size / 2 \, size / 2.5) \; end \; ofNoFill() \; ofSetColor(0) \;
 ofSetCircleResolution(100) \; ofDrawCircle(xpos + size / 2 \, ypos
 + size / 2 \, size / 2.5) \; ofDrawRectangle(xpos \, ypos \, size \,
-size) \; ofPopStyle() \; ofPopMatrix() \; end \; \; function M.delay()
+size) \; ofPopMatrix() \; ofPopStyle() \; end \; \; function M.delay()
 \; value = 1 \; end \; \; function M.free() \; ofWindow.removeListener("mousePressed"
 \, this) \; end \; \; function M.mousePressed(e) \; if ofGetMouseX()
 > xpos and ofGetMouseX() < xpos + size and ofGetMouseY() > ypos and

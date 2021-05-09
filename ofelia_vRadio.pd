@@ -18,7 +18,7 @@ M.bang() \; ofPushMatrix() \; ofPushStyle() \; ofSetRectMode(OF_RECTMODE_CORNER)
 - size / 10) \; ofSetColor(0) \; for x = 1 \, number - 1 do \; ofDrawLine(xpos
 \, ypos + size * x \, xpos + size \, ypos + size * x) \; end \; ofDrawRectangle(xpos
 + size / 5 \, ypos + size * value + size / 5 \, size - size / 2.5 \,
-size - size / 2.5) \; ofPopStyle() \; ofPopMatrix() \; end \; \; function
+size - size / 2.5) \; ofPopMatrix() \; ofPopStyle() \; end \; \; function
 M.free() \; ofWindow.removeListener("mousePressed" \, this) \; end
 \; \; function M.mousePressed(e) \; if ofGetMouseY() > ypos and ofGetMouseY()
 < ypos + size * number and ofGetMouseX() > xpos and ofGetMouseX() <
