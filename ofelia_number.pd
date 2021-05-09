@@ -21,8 +21,8 @@ function M.bang() \; ofPushMatrix() \; ofPushStyle() \; ofSetColor(0)
 \, 200 \, 255) \; end \; if preview == 1 then \; font:drawString(string.format("%g"..">"
 \, previewValue) \, xpos + 10 \, ypos + 37) \; else \; font:drawString(string.format("%g"
 \, value) \, xpos + 10 \, ypos + 37) \; end \; if now < ofGetElapsedTimeMillis()
-then \; preview = 0 \; previewValue = 0 \; count = 0 \; multiply =
-1 \; decimalPlace = 0 \; end \; ofPopMatrix() \; ofPopStyle() \; end
+then \; preview = 0 \; previewValue = 0 \; count = 0 \; decimalPlace
+= 0 \; multiply = 1 \; end \; ofPopMatrix() \; ofPopStyle() \; end
 \; \; function M.mousePressed(e) \; count = 0 \; previewValue = 0 \;
 preview = 0 \; decimalPlace = 0 \; multiply = 1 \; if ofGetMouseX()
 > xpos and ofGetMouseX() < xpos + width and ofGetMouseY() > ypos and
@@ -32,20 +32,22 @@ ofGetMouseY() < ypos + height then \; mouseState = 1 \; else \; mouseState
 - ofGetMouseY()) / 1000 + value \; else \; value = math.floor(ofGetPreviousMouseY()
 - ofGetMouseY()) + value \; end \; end \; return value \; end \; \;
 function M.keyPressed(e) \; key = e.key \; if key == 43 and mouseState
-== 1 and count == 0 then \; multiply = 1 \; end \; if key == 45 and
-mouseState == 1 and count == 0 then \; multiply = - 1 \; end \; if
-key == 46 and mouseState == 1 then \; decimalPlace = 1 \; end \; if
-key >= 48 and key <= 57 and mouseState == 1 then \; now = ofGetElapsedTimeMillis()
-+ 3000 \; preview = 1 \; if decimalPlace == 0 then \; previewValue
-= previewValue * 10 + (key - 48) * multiply \; else \; count = count
-+ 1 \; previewValue = previewValue + ((key - 48) * multiply / 10 ^
-count) \; end \; end \; if key == 13 and preview == 1 then \; value
-= previewValue \; preview = 0 \; mouseState = 0 \; return value \;
-end \; end \; \; function M.keyReleased(e) \; key = 0 \; end \; \;
-function M.inlet(f) \; value = f \; return value \; end \; \; function
-M.free() \; ofWindow.removeListener("mousePressed" \, this) \; ofWindow.removeListener("mouseDragged"
-\, this) \; ofWindow.removeListener("keyPressed" \, this) \; ofWindow.removeListener("keyReleased"
-\, this) \; end \;;
+== 1 and count == 0 then \; now = ofGetElapsedTimeMillis() + 3000 \;
+multiply = 1 \; end \; if key == 45 and mouseState == 1 and count ==
+0 then \; now = ofGetElapsedTimeMillis() + 3000 \; multiply = - 1 \;
+end \; if key == 46 and mouseState == 1 then \; decimalPlace = 1 \;
+end \; if key >= 48 and key <= 57 and mouseState == 1 then \; now =
+ofGetElapsedTimeMillis() + 3000 \; preview = 1 \; if decimalPlace ==
+0 then \; previewValue = previewValue * 10 + (key - 48) * multiply
+\; else \; count = count + 1 \; previewValue = previewValue + ((key
+- 48) * multiply / 10 ^ count) \; end \; end \; if key == 13 and preview
+== 1 then \; value = previewValue \; preview = 0 \; mouseState = 0
+\; return value \; end \; end \; \; function M.keyReleased(e) \; key
+= 0 \; end \; \; function M.inlet(f) \; value = f \; return value \;
+end \; \; function M.free() \; ofWindow.removeListener("mousePressed"
+\, this) \; ofWindow.removeListener("mouseDragged" \, this) \; ofWindow.removeListener("keyPressed"
+\, this) \; ofWindow.removeListener("keyReleased" \, this) \; end \;
+;
 #X f 22;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
