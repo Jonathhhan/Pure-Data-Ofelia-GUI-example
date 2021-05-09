@@ -1,0 +1,22 @@
+#N canvas 1375 228 431 196 10;
+#X obj 126 48 inlet;
+#X obj 126 111 outlet;
+#X obj 126 69 t b b;
+#X obj 165 48 inlet;
+#X msg 165 70 inlet \$1;
+#X obj 153 90 ofelia d -k \$0-label;
+#A __set local c = ofCanvas(this) \; local args = c:getArgs() \; local
+xpos \, ypos \, width \, height = args[1] \, args[2] \, args[3] \,
+args[4] \; M.inlet = "0" \; \; function M.bang() \; ofPushMatrix()
+\; ofPushStyle() \; ofSetRectMode(OF_RECTMODE_CORNER) \; ofFill() \;
+ofSetColor(255) \; ofDrawRectangle(xpos \, ypos \, width \, height)
+\; ofSetColor(0) \; ofDrawRectangle(xpos + 5 \, ypos+ 5 \, width -
+10 \, height- 10) \; ofSetColor(255) \; font:drawString(string.format("%s"
+\, M.inlet) \, xpos + 10 \, ypos + 37) \; ofPopStyle() \; ofPopMatrix()
+\; end \;;
+#X f 22;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 1 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
