@@ -46,7 +46,7 @@ M.keyReleased(e) \; key = 0 \; end \; \; function M.inlet(f) \; value
 = 0 \; end \; \; function M.free() \; ofWindow.removeListener("mousePressed"
 \, this) \; ofWindow.removeListener("mouseDragged" \, this) \; ofWindow.removeListener("keyPressed"
 \, this) \; ofWindow.removeListener("keyReleased" \, this) \; end \;
-\;;
+;
 #X f 22;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;

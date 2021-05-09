@@ -8,12 +8,12 @@
 #A __set local c = ofCanvas(this) \; local args = c:getArgs() \; local
 xpos \, ypos \, width \, height = args[1] \, args[2] \, args[3] \,
 args[4] \; M.inlet = "0" \; \; function M.bang() \; ofPushMatrix()
-\; ofPushStyle() \; ofSetRectMode(OF_RECTMODE_CORNER) \; ofFill() \;
-ofSetColor(255) \; ofDrawRectangle(xpos \, ypos \, width \, height)
-\; ofSetColor(0) \; ofDrawRectangle(xpos + 5 \, ypos+ 5 \, width -
-10 \, height- 10) \; ofSetColor(255) \; font:drawString(string.format("%s"
-\, M.inlet) \, xpos + 10 \, ypos + 37) \; ofPopMatrix() \; ofPopStyle()
-\; end \;;
+\; ofPushStyle() \; ofSetRectMode(OF_RECTMODE_CORNER) \; ofSetColor(255)
+\; ofDrawRectangle(xpos \, ypos \, width \, height) \; ofSetColor(0)
+\; ofDrawRectangle(xpos + 5 \, ypos+ 5 \, width - 10 \, height- 10)
+\; ofSetColor(255) \; font:drawString(string.format("%s" \, M.inlet)
+\, xpos + 10 \, ypos + 37) \; ofPopMatrix() \; ofPopStyle() \; end
+\;;
 #X f 22;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;

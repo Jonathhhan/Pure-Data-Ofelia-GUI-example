@@ -18,18 +18,18 @@ end \; \; function M.bang() \; ofPushMatrix() \; ofPushStyle() \; ofSetRectMode(
 \, height) \; ofSetColor(100 \, 200 \, 255) \; ofDrawRectangle(xpos
 \, ypos \, value * width \, height) \; ofSetLineWidth(2) \; ofNoFill()
 \; ofSetColor(0) \; ofDrawRectangle(xpos \, ypos \, width \, height)
-\; ofPopMatrix() \; ofPopStyle() \; end \; \; function M.free() \;
-ofWindow.removeListener("mousePressed" \, this) \; ofWindow.removeListener("mouseDragged"
-\, this) \; ofWindow.removeListener("mouseReleased" \, this) \; end
-\; \; function M.mousePressed(e) \; if ofGetMouseX() > xpos and ofGetMouseX()
-< xpos + width and ofGetMouseY() > ypos and ofGetMouseY() < ypos +
-height then \; mouseState = 1 \; value = ofNormalize((ofGetMouseX()
--xpos ) * (maxVal - minVal) / width + minVal \, minVal \, maxVal) \;
-return ofLerp(minVal \, maxVal \, value) \; end \; end \; \; function
-M.mouseDragged(e) \; if mouseState == 1 then \; value = ofNormalize((ofGetMouseX()
--xpos ) * (maxVal - minVal) / width + minVal \, minVal \, maxVal) \;
-return ofLerp(minVal \, maxVal \, value) \; end \; end \; \; function
-M.mouseReleased(e) \; mouseState = 0 \; end \;;
+\; ofPopMatrix() \; ofPopStyle() \; end \; \; function M.mousePressed(e)
+\; if ofGetMouseX() > xpos and ofGetMouseX() < xpos + width and ofGetMouseY()
+> ypos and ofGetMouseY() < ypos + height then \; mouseState = 1 \;
+value = ofNormalize((ofGetMouseX() -xpos ) * (maxVal - minVal) / width
++ minVal \, minVal \, maxVal) \; return ofLerp(minVal \, maxVal \,
+value) \; end \; end \; \; function M.mouseDragged(e) \; if mouseState
+== 1 then \; value = ofNormalize((ofGetMouseX() -xpos ) * (maxVal -
+minVal) / width + minVal \, minVal \, maxVal) \; return ofLerp(minVal
+\, maxVal \, value) \; end \; end \; \; function M.mouseReleased(e)
+\; mouseState = 0 \; end \; \; function M.free() \; ofWindow.removeListener("mousePressed"
+\, this) \; ofWindow.removeListener("mouseDragged" \, this) \; ofWindow.removeListener("mouseReleased"
+\, this) \; end \;;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 2 1 6 0;
