@@ -12,16 +12,16 @@ xpos \, ypos \, size = args[1] \, args[2] \, args[3] \; local value
 \, this) \; end \; \; function M.value(float) \; if float <= 0 then
 \; value = false \; else \; value = true \; end \; return value \;
 end \; \; function M.bang() \; ofPushMatrix() \; ofPushStyle() \; ofSetRectMode(OF_RECTMODE_CORNER)
-\; ofFill() \; ofSetColor(0) \; ofDrawRectangle(xpos \, ypos \, size
-\, size) \; ofSetColor(255) \; ofDrawRectangle(xpos + size / 40 \,
-ypos + size / 40 \, size - size / 20 \, size - size / 20) \; ofSetColor(0)
-\; if value then \; ofDrawLine(xpos \, ypos \, xpos + size \, ypos
-+ size) \; ofDrawLine(xpos + size \, ypos \, xpos \, ypos + size) \;
-end \; ofPopMatrix() \; ofPopStyle() \; end \; \; function M.free()
-\; ofWindow.removeListener("mousePressed" \, this) \; end \; \; function
-M.mousePressed(e) \; if ofGetMouseX() > xpos and ofGetMouseX() < xpos
-+ size and ofGetMouseY() > ypos and ofGetMouseY() < ypos + size then
-\; value = not value \; return value \; end \; end \;;
+\; ofSetColor(0) \; ofDrawRectangle(xpos \, ypos \, size \, size) \;
+ofSetColor(255) \; ofDrawRectangle(xpos + size / 40 \, ypos + size
+/ 40 \, size - size / 20 \, size - size / 20) \; ofSetColor(0) \; if
+value then \; ofDrawLine(xpos \, ypos \, xpos + size \, ypos + size)
+\; ofDrawLine(xpos + size \, ypos \, xpos \, ypos + size) \; end \;
+ofPopMatrix() \; ofPopStyle() \; end \; \; function M.free() \; ofWindow.removeListener("mousePressed"
+\, this) \; end \; \; function M.mousePressed(e) \; if ofGetMouseX()
+> xpos and ofGetMouseX() < xpos + size and ofGetMouseY() > ypos and
+ofGetMouseY() < ypos + size then \; value = not value \; return value
+\; end \; end \;;
 #X f 22;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
