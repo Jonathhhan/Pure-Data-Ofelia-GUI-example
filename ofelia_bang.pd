@@ -18,11 +18,11 @@ ofSetColor(255) \; ofDrawRectangle(xpos + size / 40 \, ypos + size
 \; if value == 1 then \; ofNoFill() \; end \; ofDrawCircle(xpos + size
 / 2 \, ypos + size / 2 \, size / 2.5) \; ofPopMatrix() \; ofPopStyle()
 \; end \; \; function M.delay() \; value = 1 \; end \; \; function
-M.free() \; ofWindow.removeListener("mousePressed" \, this) \; end
-\; \; function M.mousePressed(e) \; if ofGetMouseX() > xpos and ofGetMouseX()
-< xpos + size and ofGetMouseY() > ypos and ofGetMouseY() < ypos + size
-then \; clock:delay(200) \; value = 0 \; return bang \; end \; end
-\;;
+M.mousePressed(e) \; if ofGetMouseX() > xpos and ofGetMouseX() < xpos
++ size and ofGetMouseY() > ypos and ofGetMouseY() < ypos + size then
+\; clock:delay(200) \; value = 0 \; return bang \; end \; end \; \;
+function M.free() \; ofWindow.removeListener("mousePressed" \, this)
+\; end \;;
 #X f 22;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
