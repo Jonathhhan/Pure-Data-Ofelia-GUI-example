@@ -1,4 +1,4 @@
-#N canvas 1376 230 396 194 10;
+#N canvas 1449 425 396 194 10;
 #X obj 109 40 inlet;
 #X obj 109 124 outlet;
 #X obj 109 61 t b b;
@@ -14,22 +14,25 @@ xpos \, ypos \, width \, height \, minVal \, maxVal = args[1] \, args[2]
 \, this) \; end \; \; function M.value(float) \; value = ofNormalize(float
 \, minVal \, maxVal) \; return ofLerp(minVal \, maxVal \, value) \;
 end \; \; function M.bang() \; ofPushMatrix() \; ofPushStyle() \; ofSetRectMode(OF_RECTMODE_CORNER)
-\; ofFill() \; ofSetColor(255) \; ofDrawRectangle(xpos \, ypos \, width
-\, height) \; ofSetColor(100 \, 200 \, 255) \; ofDrawRectangle(xpos
-\, ypos \, value * width \, height) \; ofSetLineWidth(2) \; ofNoFill()
 \; ofSetColor(0) \; ofDrawRectangle(xpos \, ypos \, width \, height)
-\; ofPopMatrix() \; ofPopStyle() \; end \; \; function M.mousePressed(e)
-\; if ofGetMouseX() > xpos and ofGetMouseX() < xpos + width and ofGetMouseY()
-> ypos and ofGetMouseY() < ypos + height then \; mouseState = 1 \;
-value = ofNormalize((ofGetMouseX() -xpos ) * (maxVal - minVal) / width
-+ minVal \, minVal \, maxVal) \; return ofLerp(minVal \, maxVal \,
-value) \; end \; end \; \; function M.mouseDragged(e) \; if mouseState
-== 1 then \; value = ofNormalize((ofGetMouseX() -xpos ) * (maxVal -
-minVal) / width + minVal \, minVal \, maxVal) \; return ofLerp(minVal
-\, maxVal \, value) \; end \; end \; \; function M.mouseReleased(e)
-\; mouseState = 0 \; end \; \; function M.free() \; ofWindow.removeListener("mousePressed"
-\, this) \; ofWindow.removeListener("mouseDragged" \, this) \; ofWindow.removeListener("mouseReleased"
-\, this) \; end \;;
+\; ofSetColor(255) \; ofDrawRectangle(xpos + height / 10 \, ypos +
+height / 10 \, width - height / 5 \, height - height / 5) \; ofSetColor(100
+\, 200 \, 255) \; ofDrawRectangle(xpos + height / 10 \, ypos + height
+/ 10 \, value * (width - height / 5) \, height - height / 5) \; ofPopMatrix()
+\; ofPopStyle() \; end \; \; function M.mousePressed(e) \; if ofGetMouseX()
+>= xpos + height / 10 and ofGetMouseX() <= xpos + width - height /
+10 and ofGetMouseY() >= ypos + height / 10 and ofGetMouseY() <= ypos
++ height - height / 10 then \; mouseState = 1 \; value = ofNormalize((ofGetMouseX()
+- xpos - height / 10) * (maxVal - minVal) / (width - height / 5) +
+minVal \, minVal \, maxVal) \; return ofLerp(minVal \, maxVal \, value)
+\; end \; end \; \; function M.mouseDragged(e) \; if mouseState ==
+1 then \; value = ofNormalize((ofGetMouseX() - xpos - height / 10)
+* (maxVal - minVal) / (width - height / 5) + minVal \, minVal \, maxVal)
+\; return ofLerp(minVal \, maxVal \, value) \; end \; end \; \; function
+M.mouseReleased(e) \; mouseState = 0 \; end \; \; function M.free()
+\; ofWindow.removeListener("mousePressed" \, this) \; ofWindow.removeListener("mouseDragged"
+\, this) \; ofWindow.removeListener("mouseReleased" \, this) \; end
+\;;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 2 1 6 0;
