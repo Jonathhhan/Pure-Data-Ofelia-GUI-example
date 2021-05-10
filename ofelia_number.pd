@@ -24,11 +24,11 @@ function M.bang() \; ofPushMatrix() \; ofPushStyle() \; ofSetColor(0)
 then \; preview = 0 \; previewValue = 0 \; count = 0 \; decimalPlace
 = 0 \; multiply = 1 \; end \; ofPopMatrix() \; ofPopStyle() \; end
 \; \; function M.mousePressed(e) \; count = 0 \; previewValue = 0 \;
-preview = 0 \; decimalPlace = 0 \; multiply = 1 \; if ofGetMouseX()
-> xpos and ofGetMouseX() < xpos + width and ofGetMouseY() > ypos and
-ofGetMouseY() < ypos + height then \; mouseState = 1 \; else \; mouseState
-= 0 \; end \; end \; \; function M.mouseDragged(e) \; if mouseState
-== 1 then \; if key == 3680 or key == 3681 then \; value = math.floor(ofGetPreviousMouseY()
+preview = 0 \; multiply = 1 \; if ofGetMouseX() > xpos and ofGetMouseX()
+< xpos + width and ofGetMouseY() > ypos and ofGetMouseY() < ypos +
+height then \; mouseState = 1 \; else \; mouseState = 0 \; end \; end
+\; \; function M.mouseDragged(e) \; if mouseState == 1 then \; if key
+== 3680 or key == 3681 then \; value = math.floor(ofGetPreviousMouseY()
 - ofGetMouseY()) / 1000 + value \; else \; value = ofGetPreviousMouseY()
 - ofGetMouseY() + value \; end \; end \; return value \; end \; \;
 function M.keyPressed(e) \; key = e.key \; if key == 43 and mouseState
