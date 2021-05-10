@@ -1,0 +1,109 @@
+#N canvas 676 89 614 818 10;
+#X declare -path ofelia/abs;
+#X obj 287 608 loadbang;
+#X obj 287 652 ofWindow;
+#X obj 27 25 ofDraw;
+#X obj 216 270 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 8 256;
+#X obj 27 330 ofelia_toggle 100 70 40;
+#X obj 156 433 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 156 392 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 287 675 ofSetup;
+#X msg 287 698 bang;
+#X obj 27 127 ofelia_vRadio 350 30 7 20;
+#X obj 27 46 ofelia_hRadio 50 300 12 40;
+#X obj 27 208 ofelia_hSlider 200 50 120 40 0 1000;
+#X obj 27 289 ofelia_vSlider 50 70 40 200 0 10;
+#X obj 287 587 declare -path ofelia/abs;
+#X obj 27 412 ofelia_bang 100 150 40;
+#X obj 156 453 random 1000;
+#X msg 287 629 setPosition 30 100 \, setSize 640 360 \, create;
+#X obj 180 27 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 7 256;
+#X obj 234 189 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 300 256;
+#X obj 174 108 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 2 256;
+#X obj 162 310 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 192 598 r \$0-number;
+#X obj 156 474 s \$0-number;
+#X obj 162 371 s \$0-number;
+#X obj 234 249 s \$0-number;
+#X obj 27 620 ofelia_number 150 180 250 50;
+#X obj 27 683 ofelia_number 150 240 250 50;
+#X obj 192 661 r \$0-number2;
+#X obj 216 330 s \$0-number2;
+#X obj 156 536 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 156 495 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 156 577 s \$0-number2;
+#X obj 156 556 random 1e+06;
+#X obj 27 515 ofelia_bang 420 50 200;
+#X obj 174 168 s \$0-number;
+#X obj 180 87 s \$0-number2;
+#X obj 174 148 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 6 256;
+#X obj 192 704 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 103568 256;
+#X obj 192 641 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1124 256;
+#X obj 162 351 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1 256;
+#X obj 216 310 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 8 256;
+#X obj 234 229 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1000 256;
+#X obj 180 67 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 7 256;
+#X msg 186 744 symbol GUI;
+#X obj 186 723 loadbang;
+#X obj 27 765 ofelia_label 160 100 150 70;
+#X obj 287 721 ofelia f \; ofSetWindowTitle("Ofelia GUI Jona") \; ofSetBackgroundColor(55)
+\;;
+#X connect 0 0 16 0;
+#X connect 2 0 10 0;
+#X connect 3 0 12 1;
+#X connect 4 0 14 0;
+#X connect 4 1 39 0;
+#X connect 5 0 15 0;
+#X connect 6 0 14 1;
+#X connect 7 0 8 0;
+#X connect 8 0 46 0;
+#X connect 9 0 11 0;
+#X connect 9 1 36 0;
+#X connect 10 0 9 0;
+#X connect 10 1 42 0;
+#X connect 11 0 12 0;
+#X connect 11 1 41 0;
+#X connect 12 0 4 0;
+#X connect 12 1 40 0;
+#X connect 14 0 33 0;
+#X connect 14 1 5 0;
+#X connect 15 0 22 0;
+#X connect 16 0 1 0;
+#X connect 17 0 10 1;
+#X connect 18 0 11 1;
+#X connect 19 0 9 1;
+#X connect 20 0 4 1;
+#X connect 21 0 25 1;
+#X connect 25 0 26 0;
+#X connect 25 1 38 0;
+#X connect 26 0 45 0;
+#X connect 26 1 37 0;
+#X connect 27 0 26 1;
+#X connect 29 0 32 0;
+#X connect 30 0 33 1;
+#X connect 32 0 31 0;
+#X connect 33 0 25 0;
+#X connect 33 1 29 0;
+#X connect 36 0 34 0;
+#X connect 39 0 23 0;
+#X connect 40 0 28 0;
+#X connect 41 0 24 0;
+#X connect 42 0 35 0;
+#X connect 43 0 45 1;
+#X connect 44 0 43 0;
