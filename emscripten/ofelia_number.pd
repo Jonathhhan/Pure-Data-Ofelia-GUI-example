@@ -24,21 +24,21 @@ function M.bang() \; ofPushMatrix() \; ofPushStyle() \; ofSetColor(0)
 then \; preview = 0 \; previewValue = 0 \; count = 0 \; decimalPlace
 = 0 \; multiply = 1 \; end \; ofPopMatrix() \; ofPopStyle() \; end
 \; \; function M.mousePressed(e) \; count = 0 \; previewValue = 0 \;
-preview = 0 \; decimalPlace = 0 \; multiply = 1 \; if ofGetMouseX()
-> xpos and ofGetMouseX() < xpos + width and ofGetMouseY() > ypos and
-ofGetMouseY() < ypos + height then \; mouseState = 1 \; else \; mouseState
-= 0 \; end \; end \; \; function M.mouseDragged(e) \; if mouseState
-== 1 then \; if key == 83 then \; value = math.floor(ofGetPreviousMouseY()
-- ofGetMouseY()) / 1000 + value \; else \; value = ofGetPreviousMouseY()
-- ofGetMouseY() + value \; end \; end \; return value \; end \; \;
-function M.keyPressed(e) \; key = e.key \; keycode = e.keycode \; if
-key == 43 and mouseState == 1 and count == 0 then \; now = ofGetElapsedTimeMillis()
-+ 3000 \; multiply = 1 \; end \; if key == 45 and mouseState == 1 and
-count == 0 then \; now = ofGetElapsedTimeMillis() + 3000 \; multiply
-= - 1 \; end \; if key == 46 and mouseState == 1 then \; decimalPlace
-= 1 \; end \; if key >= 48 and key <= 57 and mouseState == 1 then \;
-now = ofGetElapsedTimeMillis() + 3000 \; preview = 1 \; if decimalPlace
-== 0 then \; previewValue = previewValue * 10 + (key - 48) * multiply
+preview = 0 \; multiply = 1 \; if ofGetMouseX() > xpos and ofGetMouseX()
+< xpos + width and ofGetMouseY() > ypos and ofGetMouseY() < ypos +
+height then \; mouseState = 1 \; else \; mouseState = 0 \; end \; end
+\; \; function M.mouseDragged(e) \; if mouseState == 1 then \; if key
+== 83 then \; value = math.floor(ofGetPreviousMouseY() - ofGetMouseY())
+/ 1000 + value \; else \; value = ofGetPreviousMouseY() - ofGetMouseY()
++ value \; end \; end \; return value \; end \; \; function M.keyPressed(e)
+\; key = e.key \; keycode = e.keycode \; if key == 43 and mouseState
+== 1 and count == 0 then \; now = ofGetElapsedTimeMillis() + 3000 \;
+multiply = 1 \; end \; if key == 45 and mouseState == 1 and count ==
+0 then \; now = ofGetElapsedTimeMillis() + 3000 \; multiply = - 1 \;
+end \; if key == 46 and mouseState == 1 then \; decimalPlace = 1 \;
+end \; if key >= 48 and key <= 57 and mouseState == 1 then \; now =
+ofGetElapsedTimeMillis() + 3000 \; preview = 1 \; if decimalPlace ==
+0 then \; previewValue = previewValue * 10 + (key - 48) * multiply
 \; else \; count = count + 1 \; previewValue = previewValue + ((key
 - 48) * multiply / 10 ^ count) \; end \; end \; if key == 69 and preview
 == 1 then \; value = previewValue \; preview = 0 \; mouseState = 0
