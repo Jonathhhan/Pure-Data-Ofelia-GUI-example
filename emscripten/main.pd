@@ -1,10 +1,10 @@
-#N canvas 676 89 614 818 10;
+#N canvas 692 71 614 818 10;
 #X declare -path ofelia/abs;
 #X obj 287 608 loadbang;
 #X obj 287 652 ofWindow;
 #X obj 27 25 ofDraw;
-#X obj 216 270 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 8 256;
+#X obj 216 270 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 8 256;
 #X obj 27 330 ofelia_toggle 100 70 40;
 #X obj 156 433 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -20,12 +20,12 @@
 #X obj 27 412 ofelia_bang 100 150 40;
 #X obj 156 453 random 1000;
 #X msg 287 629 setPosition 30 100 \, setSize 640 360 \, create;
-#X obj 180 27 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 7 256;
-#X obj 234 189 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 300 256;
-#X obj 174 108 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 2 256;
+#X obj 180 27 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 7 256;
+#X obj 234 189 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 300 256;
+#X obj 174 108 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 2 256;
 #X obj 162 310 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 192 598 r \$0-number;
@@ -41,24 +41,24 @@
 #X obj 156 495 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 156 577 s \$0-number2;
-#X obj 156 556 random 1e+06;
+#X obj 156 556 random 1e+006;
 #X obj 27 515 ofelia_bang 420 50 200;
 #X obj 174 168 s \$0-number;
 #X obj 180 87 s \$0-number2;
-#X obj 174 148 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 6 256;
-#X obj 192 704 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 103568 256;
-#X obj 192 641 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 1124 256;
-#X obj 162 351 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
-#X obj 216 310 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 8 256;
-#X obj 234 229 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 1000 256;
-#X obj 180 67 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 7 256;
+#X obj 174 148 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 2 256;
+#X obj 192 704 nbx 8 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 7 256;
+#X obj 192 641 nbx 8 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 1 256;
+#X obj 162 351 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 1 256;
+#X obj 216 310 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 8 256;
+#X obj 234 229 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 300 256;
+#X obj 180 67 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 7 256;
 #X msg 186 744 symbol GUI;
 #X obj 186 723 loadbang;
 #X obj 27 765 ofelia_label 160 100 150 70;
