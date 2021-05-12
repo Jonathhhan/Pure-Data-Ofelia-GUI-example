@@ -1,3 +1,3 @@
 # Pure-Data-Ofelia-GUI-example
 
-http://puredatagui.handmadeproductions.de/
+https://puredatagui.handmadeproductions.de/
